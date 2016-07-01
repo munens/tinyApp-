@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <!-- Write EJS code here to display shortened links -->
+    <!--<p></p>-->
+   	<a href="https://bitly.com/">Shorten more links?</a>
+   	<ul>
+   		<% Object.keys(urls).forEach(function(key) { %>
+   			
+   			<li><a href="/urls/u/<%=key%>/edit"><%=key%></li>
+   			<br/>
+   			<br/>
+   				<span>
+   					<!--<form method="POST" action="/urls/<%=key%>?_method=PUT">
+   						<button type="submit">Edit</button>
+   					</form> -->
+   					<a href="urls_show" type="button">
+  					<form method="POST" action="/urls/<%=key%>?_method=DELETE">
+  						<button type="submit">Delete?</button>
+  					</form>
+  				</span>
+   			<br/>
+   		<% }); %>
+   		
+   	</ul>
+</body>
+</html>
