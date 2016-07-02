@@ -3,9 +3,9 @@
 <body>
     <!-- Write EJS code here to display shortened links -->
     <ul>
-    	<a href=<%= urls[shortURL]%>><%= shortURL%></a>
-   		<form method="POST" action="/urls/<%=shortURL%>?_method=PUT" >
-  			<input id="newURL" type="text" name="newURL" placeholder="<%=urls[shortURL]%>" style="width: 300px">
+    	<a href=<%=url.longURL%>><%= url.shortURL%></a>
+   		<form method="POST" action="/urls/<%=url.shortURL%>?_method=PUT" >
+  			<input id="newURL" type="text" name="newURL" placeholder="<%=url.longURL%>" style="width: 300px">
       		<input type="submit" value="change URL?">
   		</form>
    	</ul>
