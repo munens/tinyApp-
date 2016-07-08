@@ -1,27 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
-    <!-- Write EJS code here to display shortened links -->
-    <!--<p></p>-->
-   	<a href="https://bitly.com/">Shorten more links?</a>
+   	<a href="/urls/new">Create new URLs?</a>
    	<ul>
    		<% urls.forEach(function(urlDoc) { %>
-   			
-   			<li><a href="/urls/u/<%=urlDoc.shortURL%>/edit"><%=urlDoc.shortURL%></li>
+   			<li><a href="/urls/<%=urlDoc.shortURL%>/edit"><%=urlDoc.longURL%></li>
    			<br/>
    			<br/>
-   				<span>
-   					<!--<form method="POST" action="/urls/<%=urlDoc.shortURL%>?_method=PUT">
-   						<button type="submit">Edit</button>
-   					</form> -->
-   					<a href="urls_index" type="button">
-  					<form method="POST" action="/urls/<%=urlDoc.shortURL%>?_method=DELETE">
-  						<button type="submit">Delete?</button>
-  					</form>
-  				</span>
+ 				<span>
+ 					<a href="urls_index" type="button">
+					<form method="POST" action="/urls/<%= urlDoc.shortURL %>?_method=DELETE">
+						<button type="submit">Delete?</button>
+					</form>
+				</span>
    			<br/>
    		<% }); %>
-   		
    	</ul>
 </body>
 </html>
